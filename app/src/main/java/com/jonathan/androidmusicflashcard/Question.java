@@ -1,35 +1,32 @@
 package com.jonathan.androidmusicflashcard;
 
-import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.provider.MediaStore;
-import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Question implements Parcelable {
 
-    private int song;
+    private String songName;
     private List<String> answers;
     private String correctAnswer;
 
-    public Question(int song, List<String> answers, String correctAnswer) {
-        this.song = song;
+    public Question(String songName, List<String> answers, String correctAnswer) {
+        this.songName = songName;
         this.answers = answers;
         this.correctAnswer = correctAnswer;
     }
 
     protected Question(Parcel in) {
-        song = in.readInt();
+        songName = in.readString();
         answers = in.createStringArrayList();
         correctAnswer = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(song);
+        dest.writeString(songName);
         dest.writeStringList(answers);
         dest.writeString(correctAnswer);
     }
@@ -51,8 +48,8 @@ public class Question implements Parcelable {
         }
     };
 
-    public int getSong() {
-        return song;
+    public String getSongName() {
+        return songName;
     }
 
     public List<String> getAnswers() {
@@ -71,7 +68,7 @@ public class Question implements Parcelable {
     @Override
     public String toString() {
         return "Question{" +
-                "song=" + song +
+                "song=" + songName +
                 ", answers=" + answers +
                 ", correctAnswer='" + correctAnswer + '\'' +
                 '}';

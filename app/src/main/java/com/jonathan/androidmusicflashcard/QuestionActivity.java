@@ -18,6 +18,7 @@ import java.util.List;
 public class QuestionActivity extends AppCompatActivity {
 
     public boolean isPlay = false;
+    public Game game = new Game(Game.Theme.HipHop);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,7 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
+        game.fetchGameQuestions();
 
         Button playSong = findViewById(R.id.playAudioButton);
 
