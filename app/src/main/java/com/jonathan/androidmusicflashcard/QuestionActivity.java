@@ -2,6 +2,7 @@ package com.jonathan.androidmusicflashcard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -18,27 +19,31 @@ import java.util.List;
 public class QuestionActivity extends AppCompatActivity {
 
     public boolean isPlay = false;
-    public Game game = new Game(Game.Theme.HipHop);
+    private Game game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
-
+        game = getIntent().getParcelableExtra("game");
         RadioGroup radioGroup = findViewById(R.id.radioGroup1);
 
-        List<String> answersList = new ArrayList<String>();
-        answersList.add("Answer 1");
-        answersList.add("Answer 2");
-        answersList.add("Answer 3");
+        //get flashCards
+        List<FlashCard> flashCards = game.getFlashCards();
 
-        Collections.shuffle(answersList);
+        //get answers by question index
+        List<String> answers = game.randomiseAnswers();
 
-        final RadioButton[] generatedRadioButtons = new RadioButton[answersList.size()];
-        for (int i = 0; i < answersList.size(); i++) {
+        //correct answer
+        String correctAnswer = game.getCorrectAnswer();
+
+        //Random answers
+        final RadioButton[] generatedRadioButtons = new RadioButton[answers.size()];
+
+        for (int i = 0; i < answers.size(); i++) {
             generatedRadioButtons[i] = new RadioButton(this);
             radioGroup.addView(generatedRadioButtons[i]);
-            generatedRadioButtons[i].setText(answersList.get(i));
+            generatedRadioButtons[i].setText(answers.get(i));
         }
 
         Button confirmButton = findViewById(R.id.confirmButton);
@@ -47,20 +52,19 @@ public class QuestionActivity extends AppCompatActivity {
             RadioButton checkedRadioButton = findViewById(radioGroup.getCheckedRadioButtonId());
 
             String userAnswer = checkedRadioButton.getText().toString();
-            String correctAnswer = "Answer 1";
 
             TextView resultTextView = findViewById(R.id.resultTextView);
 
-            if (userAnswer.equals(correctAnswer)) {
+            if (game.checkAnswer(userAnswer)) {
                 resultTextView.setTextColor(Color.GREEN);
                 resultTextView.setText("Correct answer");
             } else {
                 resultTextView.setTextColor(Color.RED);
                 resultTextView.setText("Wrong answer. The right answer was " + correctAnswer);
             }
+            game.setIsQuestion(game.getIsQuestion() + 1);
         });
 
-        game.fetchGameQuestions();
 
         Button playSong = findViewById(R.id.playAudioButton);
 

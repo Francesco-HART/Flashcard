@@ -19,7 +19,7 @@ public class FlashCardProvider {
 
     public ArrayList<FlashCard> loadFlashCards(Context context, Game.Theme theme) {
         ArrayList<FlashCard> flashCards = new ArrayList<>();
-        List<String> answers = new ArrayList<>();
+
         String fileName = "";
         switch (theme) {
             case HipHop:
@@ -44,20 +44,24 @@ public class FlashCardProvider {
             JSONArray array = new JSONArray(content);
 
             for (int i = 0; i < array.length(); i++) {
+                List<String> answers = new ArrayList<>();
                 JSONObject obj = (JSONObject) array.get(i);
                 JSONArray jsonArray = obj.getJSONArray("answers");
 
                 for (int j = 0; j < jsonArray.length(); j++) {
+
                     Log.i(TAG, "loadFlashCards: " + jsonArray.get(j));
                     answers.add((String) jsonArray.get(j));
                 }
 
-                FlashCard flashCard = new FlashCard(obj.getString("songName"), answers, (obj.getString("correctAnswer")));
+                List<String> answersCopy = new ArrayList<>(answers);
+                FlashCard flashCard = new FlashCard(obj.getString("songName"), answersCopy, (obj.getString("correctAnswer")));
                 flashCards.add(flashCard);
             }
 
         } catch (IOException | JSONException e) {
-            e.printStackTrace();
+            Log.e(TAG, "loadFlashCards: " + flashCards);
+
         }
         return flashCards;
 

@@ -13,6 +13,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private FlashCardProvider provider;
+    private FlashCardProvider flashCard;
+    private Game game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +22,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        provider = new FlashCardProvider();
-        Game.Theme theme = Game.Theme.HipHop;
-        ArrayList<FlashCard> flashCards = provider.loadFlashCards(this, theme);
 
         Button questions = findViewById(R.id.playButton);
         questions.setOnClickListener(v -> {
-            openPopUp();
-
+            //openPopUp();
+            //TODO : theme by popup select
+            provider = new FlashCardProvider();
+            Game.Theme theme = Game.Theme.HipHop;
+            ArrayList<FlashCard> flashCards = provider.loadFlashCards(this, theme);
+            game = new Game(Game.Theme.HipHop, flashCards);
+            Intent intentQuestionActivity = new Intent(MainActivity.this, QuestionActivity.class);
+            intentQuestionActivity.putExtra("game", game);
+            startActivity(intentQuestionActivity);
         });
     }
 
