@@ -1,0 +1,24 @@
+[
+  {
+    "theme": "classic",
+    "songName": "la vie avant ",
+    "answers": [
+      "reponse1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctAnswer": "reponse1"
+  },
+  {
+    "theme": "classic",
+    "songName": "Booba ",
+    "answers": [
+      "reponse1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctAnswer": "reponse1"
+  }
+]

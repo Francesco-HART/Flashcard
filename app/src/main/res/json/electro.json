@@ -1,0 +1,24 @@
+[
+  {
+    "theme": "electro",
+    "songName": "When I look",
+    "answers": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctAnswer": "4"
+  },
+  {
+    "theme": "electro",
+    "songName": "Soft Power",
+    "answers": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctAnswer": "4"
+  }
+]
