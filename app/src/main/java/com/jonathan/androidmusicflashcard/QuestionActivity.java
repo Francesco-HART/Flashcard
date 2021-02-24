@@ -3,6 +3,7 @@ package com.jonathan.androidmusicflashcard;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -15,6 +16,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class QuestionActivity extends AppCompatActivity {
+
+    public boolean isPlay = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +34,8 @@ public class QuestionActivity extends AppCompatActivity {
         Collections.shuffle(answersList);
 
         final RadioButton[] generatedRadioButtons = new RadioButton[answersList.size()];
-        for(int i=0; i<answersList.size(); i++){
-            generatedRadioButtons[i]  = new RadioButton(this);
+        for (int i = 0; i < answersList.size(); i++) {
+            generatedRadioButtons[i] = new RadioButton(this);
             radioGroup.addView(generatedRadioButtons[i]);
             generatedRadioButtons[i].setText(answersList.get(i));
         }
@@ -47,16 +50,23 @@ public class QuestionActivity extends AppCompatActivity {
 
             TextView resultTextView = findViewById(R.id.resultTextView);
 
-            if (userAnswer.equals(correctAnswer))
-            {
+            if (userAnswer.equals(correctAnswer)) {
                 resultTextView.setTextColor(Color.GREEN);
                 resultTextView.setText("Correct answer");
-            }
-            else
-            {
+            } else {
                 resultTextView.setTextColor(Color.RED);
                 resultTextView.setText("Wrong answer. The right answer was " + correctAnswer);
             }
         });
+
+
+        Button playSong = findViewById(R.id.playAudioButton);
+
+        playSong.setOnClickListener(v -> {
+            MediaPlayer mediaPlayer = MediaPlayer.create(QuestionActivity.this, R.raw.music2);
+            mediaPlayer.start();
+        });
+
+
     }
 }
