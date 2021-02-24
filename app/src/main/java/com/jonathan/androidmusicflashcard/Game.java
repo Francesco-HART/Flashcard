@@ -1,14 +1,5 @@
 package com.jonathan.androidmusicflashcard;
 
-import android.util.Log;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.FileReader;
-import java.io.IOError;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +14,7 @@ public class Game {
 
     private final int numberQuestion = 10;
     private Theme theme;
-    private List<Question> questions;
+    private List<FlashCard> questions;
 
 
     public Game(Theme theme) {
@@ -34,12 +25,11 @@ public class Game {
         return theme;
     }
 
-    public List<Question> getQuestions() {
+    public List<FlashCard> getQuestions() {
         return questions;
     }
 
-    public List<Question> fetchGameQuestions() {
-        JSONArray a = (JSONArray) parser.parse(new FileReader("c:\\exer4-courses.json"));
+    public List<FlashCard> fetchGameQuestions() {
         String jsonString = "";
 
         switch (this.theme) {
@@ -55,7 +45,14 @@ public class Game {
                 break;
 
         }
-        try {
+
+       /* try {
+
+            JSONParser jsonParser = new JSONParser();
+
+            JSONArray a = (JSONArray) jsonParser.parse(new FileReader("../../res.json." + jsonString + ""));
+
+
             JSONArray obj = new JSONArray(jsonString);
 
             for (int i = 0; i < obj.length(); i++) {
@@ -64,9 +61,9 @@ public class Game {
 
             }
 
-        } catch (JSONException e) {
+        } catch (JSONException | FileNotFoundException e) {
             Log.e("Game", "Error on read json", e);
-        }
+        }*/
 
         return new ArrayList<>();
     }

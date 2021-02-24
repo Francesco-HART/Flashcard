@@ -1,0 +1,4 @@
+#Wed Feb 24 15:43:46 CET 2021
+base.0=/home/francesco/Documents/codingFactory/android/android-l2-flashcards-groupe-4-flashcard/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
