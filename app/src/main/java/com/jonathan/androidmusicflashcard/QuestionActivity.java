@@ -32,6 +32,8 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void nextQuestion(boolean playAgain)
     {
+        TextView questionIndexTextView = findViewById(R.id.questionIndexTextView);
+        questionIndexTextView.setText(game.getCurrentIndexDisplay() + "/" + game.getLastIndex());
         RadioGroup radioGroup = findViewById(R.id.radioGroup1);
         radioGroup.removeAllViews();
 

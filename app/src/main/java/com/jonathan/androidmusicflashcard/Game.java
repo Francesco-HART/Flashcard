@@ -40,7 +40,6 @@ public class Game implements Parcelable {
 
     }
 
-
     protected Game(Parcel in) {
         numberQuestion = in.readInt();
         flashCards = in.createTypedArrayList(FlashCard.CREATOR);
@@ -127,6 +126,10 @@ public class Game implements Parcelable {
     {
         return questionIndex;
     }
+
+    public int getCurrentIndexDisplay() { return questionIndex + 1; }
+
+    public int getLastIndex() { return numberQuestion; }
 
     public int increaseQuestionIndex() {
         if (questionIndex < numberQuestion)
