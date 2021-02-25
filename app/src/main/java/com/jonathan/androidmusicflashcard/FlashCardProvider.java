@@ -23,13 +23,13 @@ public class FlashCardProvider {
         String fileName = "";
         switch (theme) {
             case HipHop:
-                fileName = "hip-hop.json";
+                fileName = "json/hip-hop.json";
                 break;
             case Classic:
-                fileName = "classic.json";
+                fileName = "json/classic.json";
                 break;
-            case ELECTRO:
-                fileName = "electro.json";
+            case Electro:
+                fileName = "json/electro.json";
                 break;
         }
 
@@ -54,8 +54,10 @@ public class FlashCardProvider {
                     answers.add((String) jsonArray.get(j));
                 }
 
+                Game.Theme flashCardTheme = Game.Theme.valueOf(obj.getString("theme"));
+
                 List<String> answersCopy = new ArrayList<>(answers);
-                FlashCard flashCard = new FlashCard(obj.getString("songName"), answersCopy, (obj.getString("correctAnswer")));
+                FlashCard flashCard = new FlashCard(obj.getString("songName"), answersCopy, (obj.getString("correctAnswer")), flashCardTheme);
                 flashCards.add(flashCard);
             }
 
@@ -65,5 +67,13 @@ public class FlashCardProvider {
         }
         return flashCards;
 
+    }
+
+    public ArrayList<FlashCard> loadAllFlashCards(Context context) {
+        ArrayList<FlashCard> flashCards = new ArrayList<>();
+        for (Game.Theme theme : Game.Theme.values()){
+            flashCards.addAll(loadFlashCards(context, theme));
+        }
+        return flashCards;
     }
 }

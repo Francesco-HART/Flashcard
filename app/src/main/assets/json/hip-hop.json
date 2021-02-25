@@ -1,6 +1,6 @@
 [
   {
-    "theme": "hip-hop",
+    "theme": "HipHop",
     "songName": "desiigner_panda",
     "answers": [
       "Desiigner - Panda",
@@ -11,7 +11,7 @@
     "correctAnswer": "Desiigner - Panda"
   },
   {
-    "theme": "hip-hop",
+    "theme": "HipHop",
     "songName": "eminem_not_afraid",
     "answers": [
       "Eminem - Not Afraid",
@@ -22,7 +22,7 @@
     "correctAnswer": "Eminem - Not Afraid"
   },
   {
-    "theme": "hip-hop",
+    "theme": "HipHop",
     "songName": "fetty_wap_trap_queen",
     "answers": [
       "Eminem - Lose Yourself",
