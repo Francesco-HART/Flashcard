@@ -50,9 +50,12 @@ public class MainActivity extends AppCompatActivity {
                      Game.Theme theme = Game.getThemes2()[which];
                      ArrayList<FlashCard> flashCards = provider.loadFlashCards(MainActivity.this, theme);
                      game = new Game(theme, flashCards);
+                     Log.i("MainActivity", "onClick: theme "+theme);
+                     String themeString = theme.toString();
 
                      Intent intentQuestionActivity = new Intent(MainActivity.this, QuestionActivity.class);
                      intentQuestionActivity.putExtra("game", game);
+                     intentQuestionActivity.putExtra("theme", themeString);
                      startActivity(intentQuestionActivity);
                  }
              });
