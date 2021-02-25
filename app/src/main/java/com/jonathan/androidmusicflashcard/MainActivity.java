@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent intent = new Intent(this, MainActivity.class);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -60,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
                  }
              });
              dialog.show();
+        });
+
+        Button aboutButton = findViewById(R.id.aboutButton);
+        aboutButton.setOnClickListener(v -> {
+            Intent intentAbout = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(intentAbout);
         });
     }
 
