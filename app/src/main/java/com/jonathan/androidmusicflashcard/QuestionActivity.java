@@ -113,9 +113,7 @@ public class QuestionActivity extends AppCompatActivity {
                      });
                  }
              }else{
-                 Toast myToast  = Toast.makeText(getApplicationContext(), "Value cannot be empty", Toast.LENGTH_SHORT);
-                 Log.i("TAG", "nextQuestion: " + myToast);
-                 myToast.show();
+                  runToast();
              }
              radioGroup.clearCheck();
 
@@ -130,5 +128,11 @@ public class QuestionActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void runToast() {
+        Toast myToast  = Toast.makeText(QuestionActivity.this, "Value cannot be empty", Toast.LENGTH_SHORT);
+        Log.i("TAG", "nextQuestion: " );
+        myToast.show();
     }
 }
