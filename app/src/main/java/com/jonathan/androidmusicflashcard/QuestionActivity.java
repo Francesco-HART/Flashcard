@@ -18,7 +18,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     public boolean isPlay = false;
     private Game game;
-    private MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayer = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

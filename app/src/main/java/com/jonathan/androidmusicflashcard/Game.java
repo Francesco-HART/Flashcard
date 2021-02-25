@@ -3,6 +3,7 @@ package com.jonathan.androidmusicflashcard;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -104,7 +105,23 @@ public class Game implements Parcelable {
     public String getCorrectAnswer() {
         return this.flashCards.get(this.questionIndex).getCorrectAnswer();
     }
+    
+    public static String[] getThemes()
+    {
+        String[] themesList = new String[Theme.values().length];
+        for (int i = 0; i < Theme.values().length; i++)
+        {
+            themesList[i] = Theme.values()[i].name();
+        }
 
+        return themesList;
+    }
+
+    public static Theme[] getThemes2()
+    {
+        return Theme.values();
+    }
+    
     public boolean isLastIndex()
     {
         if (questionIndex == numberQuestion - 1)
