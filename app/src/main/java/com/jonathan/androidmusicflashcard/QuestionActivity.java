@@ -22,6 +22,7 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
         game = getIntent().getParcelableExtra("game");
+
         RadioGroup radioGroup = findViewById(R.id.radioGroup1);
 
         //get flashCards
