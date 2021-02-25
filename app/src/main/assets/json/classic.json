@@ -1,6 +1,6 @@
 [
   {
-    "theme": "classic",
+    "theme": "Classic",
     "songName": "la vie avant ",
     "answers": [
       "reponse1",
@@ -11,7 +11,7 @@
     "correctAnswer": "reponse1"
   },
   {
-    "theme": "classic",
+    "theme": "Classic",
     "songName": "Booba ",
     "answers": [
       "reponse1",

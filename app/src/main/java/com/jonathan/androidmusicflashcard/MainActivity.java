@@ -66,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intentAbout = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intentAbout);
         });
+
+        Button listButton = findViewById(R.id.listButton);
+        listButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, QuestionActivityList.class);
+            startActivity(intent);
+        });
     }
 
     public void openPopUp() {

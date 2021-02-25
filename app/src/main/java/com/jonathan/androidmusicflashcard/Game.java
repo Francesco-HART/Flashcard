@@ -3,7 +3,6 @@ package com.jonathan.androidmusicflashcard;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +13,7 @@ public class Game implements Parcelable {
     enum Theme {
         HipHop,
         Classic,
-        ELECTRO
+        Electro
     }
 
     public int getQuestionIndex() {
@@ -85,7 +84,7 @@ public class Game implements Parcelable {
             case Classic:
                 jsonString = "classic";
                 break;
-            case ELECTRO:
+            case Electro:
                 jsonString = "electro";
                 break;
 

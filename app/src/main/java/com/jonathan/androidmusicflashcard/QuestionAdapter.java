@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHolder> implements View.OnClickListener {
@@ -34,7 +35,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         FlashCard flashCard = flashCards.get(position);
         holder.answers.setText(flashCard.getAnswers().toString());
-        holder.theme.setText(flashCard.getSongName());
+        holder.theme.setText(flashCard.getTheme().toString());
 
         holder.itemView.setTag(flashCard);
         holder.itemView.setOnClickListener(this);
@@ -50,10 +51,13 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
         switch (v.getId()){
             case R.id.rootItem:
                 Context context = v.getContext();
+                ArrayList<FlashCard> cards = new ArrayList<>();
                 FlashCard f = (FlashCard) v.getTag();
+                cards.add(f);
+                Game game = new Game(f.getTheme(),cards);
                 Log.i("TAG", "onClick: " + f);
                 Intent intent = new Intent(context, QuestionActivity.class);
-                intent.putExtra("game",f);
+                intent.putExtra("game",game);
                 context.startActivity(intent);
                 break;
         }
