@@ -1,24 +1,57 @@
 [
   {
     "theme": "Electro",
-    "songName": "When I look",
+    "songName": "avicii_addicted_to_you",
     "answers": [
-      "1",
-      "2",
-      "3",
-      "4"
+      "Galantis - Runaway",
+      "Skrillex - Scary Monsters And Nice Sprites",
+      "Avicii - Addicted to You",
+      "Zedd - The Middle"
     ],
-    "correctAnswer": "4"
+    "correctAnswer": "Avicii - Addicted to You"
   },
   {
     "theme": "Electro",
-    "songName": "Soft Power",
+    "songName": "avicii_levels",
     "answers": [
-      "1",
-      "2",
-      "3",
-      "4"
+      "Galantis - Runaway",
+      "Nicky Romero - Toulouse",
+      "David Guetta - Without You",
+      "Avicii - Levels"
     ],
-    "correctAnswer": "4"
+    "correctAnswer": "Avicii - Levels"
+  },
+  {
+    "theme": "Electro",
+    "songName": "calvin_harris_blame",
+    "answers": [
+      "Calvin Harris - Blame",
+      "Avicii - Hey Brother",
+      "Nicky Romero - Toulouse",
+      "David Guetta - Without You"
+    ],
+    "correctAnswer": "Calvin Harris - Blame"
+  },
+{
+    "theme": "Electro",
+    "songName": "clavin_harris_summer",
+    "answers": [
+      "Galantis - Runaway",
+      "David Guetta - Titanium",
+      "Daft Punk - Harder Better Faster",
+      "Calvin Harris - Summer"
+    ],
+    "correctAnswer": "Calvin Harris - Summer"
+  },
+{
+    "theme": "Electro",
+    "songName": "daft_punk_one_more_time",
+    "answers": [
+      "Calvin Harris - Summer",
+      "Avicii - Hey Brother",
+      "Galantis - No Money",
+      "Daft Punk - One More Time"
+    ],
+    "correctAnswer": "Daft Punk - One More Time"
   }
 ]

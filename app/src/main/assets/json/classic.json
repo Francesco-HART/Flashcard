@@ -1,24 +1,57 @@
 [
   {
     "theme": "Classic",
-    "songName": "la vie avant ",
+    "songName": "beethovens_5th_symphony",
     "answers": [
-      "reponse1",
-      "2",
-      "3",
-      "4"
+      "Vivaldi - Adagio E Piano",
+      "Chopin - Prelude in B Minor",
+      "Claude Debussy - Le Petit Berger",
+      "Beethovens - 5th Symphony"
     ],
-    "correctAnswer": "reponse1"
+    "correctAnswer": "Beethovens - 5th Symphony"
   },
   {
     "theme": "Classic",
-    "songName": "Booba ",
+    "songName": "claude_debussy_clair_de_lune",
     "answers": [
-      "reponse1",
-      "2",
-      "3",
-      "4"
+      "Claude Debussy - Clair de Lune",
+      "Beethovens - 5th Symphony",
+      "Chopin - Prelude in B Minor",
+      "Claude Debussy - Le Petit Berger"
     ],
-    "correctAnswer": "reponse1"
+    "correctAnswer": "Claude Debussy - Clair de Lune"
+  },
+  {
+    "theme": "Classic",
+    "songName": "mozart_eine_kleine_nachtmusik",
+    "answers": [
+      "Claude Debussy - Le Petit Berger",
+      "Beethovens - 5th Symphony",
+      "Chopin - Prelude in B Minor",
+      "Mozart - Eine kleine Nachtmusik"
+    ],
+    "correctAnswer": "Mozart - Eine kleine Nachtmusik"
+  },
+{
+    "theme": "Classic",
+    "songName": "mendelssohn_wedding_march",
+    "answers": [
+      "Mendelssohn - Wedding March",
+      "Chopin - Prelude in B Minor",
+      "Beethovens - 5th Symphony",
+      "Vivaldi - Adagio E Piano"
+    ],
+    "correctAnswer": "Mendelssohn - Wedding March"
+  },
+{
+    "theme": "Classic",
+    "songName": "edvard_grieg_in_the_hall_of_the_mountain_king",
+    "answers": [
+      "Mozart - Eine kleine Nachtmusik",
+      "Beethovens - 5th Symphony",
+      "Vivaldi - Adagio E Piano",
+      "Edvard Grieg - In The Hall Of The Mountain King"
+    ],
+    "correctAnswer": "Edvard Grieg - In The Hall Of The Mountain King"
   }
 ]
