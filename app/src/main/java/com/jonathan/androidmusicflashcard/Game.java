@@ -157,9 +157,9 @@ public class Game implements Parcelable {
 
     public int getLastIndex() { return numberQuestion; }
 
-    public int getScorePercentage()
+    public float getScorePercentage()
     {
-        return score / numberQuestion * 100;
+        return (float) score / numberQuestion * 100;
     }
 
     public int increaseQuestionIndex() {

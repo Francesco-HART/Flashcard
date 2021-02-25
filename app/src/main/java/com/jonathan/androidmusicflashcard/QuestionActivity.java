@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
         game = getIntent().getParcelableExtra("game");
+
 
         nextQuestion(true);
 
@@ -62,52 +64,61 @@ public class QuestionActivity extends AppCompatActivity {
             mediaPlayer.release();
             RadioButton checkedRadioButton = findViewById(radioGroup.getCheckedRadioButtonId());
 
-            String userAnswer = checkedRadioButton.getText().toString();
+             if (radioGroup.getCheckedRadioButtonId() != -1 ){
+                 String userAnswer = checkedRadioButton.getText().toString();
 
-            TextView resultTextView = findViewById(R.id.resultTextView);
+                 TextView resultTextView = findViewById(R.id.resultTextView);
 
-            if (game.checkAnswer(userAnswer)) {
-                resultTextView.setTextColor(Color.GREEN);
-                resultTextView.setText("Correct answer");
-                game.addScore();
-            } else {
-                resultTextView.setTextColor(Color.RED);
-                resultTextView.setText("Wrong answer. The right answer was " + correctAnswer);
-            }
+                 if (game.checkAnswer(userAnswer)) {
+                     resultTextView.setTextColor(Color.GREEN);
+                     resultTextView.setText("Correct answer");
+                     game.addScore();
+                 } else {
+                     resultTextView.setTextColor(Color.RED);
+                     resultTextView.setText("Wrong answer. The right answer was " + correctAnswer);
+                 }
 
-            if (playAgain)
-            {
-                game.setQuestionIndex(game.increaseQuestionIndex());
+                 if (playAgain)
+                 {
+                     game.setQuestionIndex(game.increaseQuestionIndex());
 
-                if (!game.isLastIndex())
-                {
-                    nextQuestion(true);
-                }
-                else
-                {
-                    nextQuestion(false);
-                }
-            }
-            else
-            {
-                QuestionActivity.this.setContentView(R.layout.result_screen);
+                     if (!game.isLastIndex())
+                     {
+                         nextQuestion(true);
+                     }
+                     else
+                     {
+                         nextQuestion(false);
+                     }
+                 }
+                 else
+                 {
+                     String themeString = getIntent().getStringExtra("theme");
 
-                TextView themeTextView = findViewById(R.id.themeTextView);
-                TextView scoreTextView = findViewById(R.id.scoreTextView);
-                TextView percentTextView = findViewById(R.id.percentTextView);
+                     QuestionActivity.this.setContentView(R.layout.result_screen);
 
-                Game.Theme nnnnnn = game.getTheme();
-                themeTextView.setText(nnnnnn.name());
-                scoreTextView.setText(game.getScore() + " / " + game.getNumberQuestion());
-                percentTextView.setText(game.getScorePercentage() + "% of your answers were correct");
+                     TextView themeTextView = findViewById(R.id.themeTextView);
+                     TextView scoreTextView = findViewById(R.id.scoreTextView);
+                     TextView percentTextView = findViewById(R.id.percentTextView);
+
+                     themeTextView.setText(themeString);
+                     scoreTextView.setText(game.getScore() + " / " + game.getNumberQuestion());
+                     percentTextView.setText(Math.round(game.getScorePercentage()) + "% of your answers were correct");
 
 
-                Button backToMenuButton = findViewById(R.id.backToMenuButton);
-                backToMenuButton.setOnClickListener(v1 -> {
-                    Intent intent = new Intent(QuestionActivity.this, MainActivity.class);
-                    startActivity(intent);
-                });
-            }
+                     Button backToMenuButton = findViewById(R.id.backToMenuButton);
+                     backToMenuButton.setOnClickListener(v1 -> {
+                         Intent intent = new Intent(QuestionActivity.this, MainActivity.class);
+                         startActivity(intent);
+                     });
+                 }
+             }else{
+                 Toast myToast  = Toast.makeText(getApplicationContext(), "Value cannot be empty", Toast.LENGTH_SHORT);
+                 Log.i("TAG", "nextQuestion: " + myToast);
+                 myToast.show();
+             }
+             radioGroup.clearCheck();
+
         });
 
 
