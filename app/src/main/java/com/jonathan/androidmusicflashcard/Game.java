@@ -29,16 +29,13 @@ public class Game implements Parcelable {
     private int questionIndex = 0;
     private Theme theme;
     private List<FlashCard> flashCards;
+    private int score;
 
 
     public Game(Theme theme, List<FlashCard> flashCards) {
         this.theme = theme;
-
-        //TODO : generate array flashCard by random
         Collections.shuffle(flashCards);
         this.flashCards = flashCards;
-
-
     }
 
     protected Game(Parcel in) {
@@ -70,7 +67,7 @@ public class Game implements Parcelable {
     };
 
     public Theme getTheme() {
-        return theme;
+        return this.theme;
     }
 
     public List<FlashCard> getFlashCards() {
@@ -144,9 +141,26 @@ public class Game implements Parcelable {
         return questionIndex;
     }
 
+    public void addScore()
+    {
+        this.score = this.score + 1;
+    }
+
+    public int getScore()
+    {
+        return this.score;
+    }
+
+    public int getNumberQuestion() { return numberQuestion; }
+
     public int getCurrentIndexDisplay() { return questionIndex + 1; }
 
     public int getLastIndex() { return numberQuestion; }
+
+    public int getScorePercentage()
+    {
+        return score / numberQuestion * 100;
+    }
 
     public int increaseQuestionIndex() {
         if (questionIndex < numberQuestion)
