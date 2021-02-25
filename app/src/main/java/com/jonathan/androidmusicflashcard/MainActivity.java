@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             int checkedItem = -1;
 
             MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(MainActivity.this);
-             dialog.setTitle("title");
+             dialog.setTitle("Choose your theme !");
 
              dialog.setSingleChoiceItems(Game.getThemes(), checkedItem, new DialogInterface.OnClickListener() {
                  @Override

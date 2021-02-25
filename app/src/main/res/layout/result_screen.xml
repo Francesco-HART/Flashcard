@@ -7,24 +7,41 @@
 
     <TextView
         android:id="@+id/scoreTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="112dp"
+        android:layout_height="24dp"
         android:text="Score placeholder"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/percentTextView"
         app:layout_constraintEnd_toEndOf="@+id/themeTextView"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="@+id/themeTextView"
         app:layout_constraintTop_toBottomOf="@+id/themeTextView" />
+
+    <TextView
+        android:id="@+id/scoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/scoreTextView"
+        app:layout_constraintEnd_toStartOf="@+id/scoreTextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scoreTextView" />
 
     <TextView
         android:id="@+id/percentTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Percent placeholder"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/backToMenuButton"
-        app:layout_constraintEnd_toEndOf="@+id/scoreTextView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/scoreTextView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scoreTextView" />
 
     <TextView
@@ -32,20 +49,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Theme placeholder"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/scoreTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/themeLabel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/themeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Theme:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/themeTextView"
+        app:layout_constraintEnd_toStartOf="@+id/themeTextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/themeTextView" />
 
     <Button
         android:id="@+id/backToMenuButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back to the menu"
+        app:backgroundTint="#F61B3E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/percentTextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
