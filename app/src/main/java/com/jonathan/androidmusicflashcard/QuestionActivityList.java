@@ -28,7 +28,18 @@ public class QuestionActivityList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_list);
 
-        loadFromJson();
+
+        String[] tests = new String[0];
+        try {
+            tests = QuestionActivityList.this.getAssets().list("json");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        for (String test : tests)
+        {
+            Log.i("arrayTest", test);
+            loadFromJson(test);
+        }
 
 
         adapter = new QuestionAdapter(flashCardsList);
@@ -36,25 +47,14 @@ public class QuestionActivityList extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        Game.Theme theme = Game.Theme.HipHop;
-//
-//        flashCards = new ArrayList<>();
-//
-//        for (int i = 0; i < 10; i++){
-//            flashCards.add(new FlashCard("theme",,""));
-//        }
-//        adapter = new QuestionAdapter(games);
-//
-//        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-//        recyclerView.setAdapter(adapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
   }
 
-    private void loadFromJson() {
+    private void loadFromJson(String filename) {
 
         try {
 
-            InputStream inputStream = getAssets().open("classic.json");
+            InputStream inputStream = getAssets().open("json/"+filename);
 
             int size = inputStream.available();
             byte[] buffer = new byte[size];

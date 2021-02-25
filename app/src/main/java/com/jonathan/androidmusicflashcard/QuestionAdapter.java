@@ -52,8 +52,8 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
                 Context context = v.getContext();
                 FlashCard f = (FlashCard) v.getTag();
                 Log.i("TAG", "onClick: " + f);
-                Intent intent = new Intent(context, MainActivity.class);
-                intent.putExtra("flash",f);
+                Intent intent = new Intent(context, QuestionActivity.class);
+                intent.putExtra("game",f);
                 context.startActivity(intent);
                 break;
         }

@@ -23,13 +23,13 @@ public class FlashCardProvider {
         String fileName = "";
         switch (theme) {
             case HipHop:
-                fileName = "hip-hop.json";
+                fileName = "json/hip-hop.json";
                 break;
             case Classic:
-                fileName = "classic.json";
+                fileName = "json/classic.json";
                 break;
             case ELECTRO:
-                fileName = "electro.json";
+                fileName = "json/electro.json";
                 break;
         }
 
