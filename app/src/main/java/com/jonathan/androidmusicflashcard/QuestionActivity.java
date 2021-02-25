@@ -2,18 +2,14 @@ package com.jonathan.androidmusicflashcard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class QuestionActivity extends AppCompatActivity {
@@ -62,7 +58,7 @@ public class QuestionActivity extends AppCompatActivity {
                 resultTextView.setTextColor(Color.RED);
                 resultTextView.setText("Wrong answer. The right answer was " + correctAnswer);
             }
-            game.setIsQuestion(game.getIsQuestion() + 1);
+            game.setQuestionIndex(game.increaseQuestionIndex());
         });
 
 

@@ -3,9 +3,7 @@ package com.jonathan.androidmusicflashcard;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,16 +15,16 @@ public class Game implements Parcelable {
         ELECTRO
     }
 
-    public int getIsQuestion() {
-        return isQuestion;
+    public int getQuestionIndex() {
+        return questionIndex;
     }
 
-    public void setIsQuestion(int isQuestion) {
-        this.isQuestion = isQuestion;
+    public void setQuestionIndex(int questionIndex) {
+        this.questionIndex = questionIndex;
     }
 
     private int numberQuestion = 2;
-    private int isQuestion = 0;
+    private int questionIndex = 0;
     private Theme theme;
     private List<FlashCard> flashCards;
 
@@ -97,20 +95,25 @@ public class Game implements Parcelable {
 
 
     public List<String> getAnswers() {
-        return this.flashCards.get(this.isQuestion).getAnswers();
+        return this.flashCards.get(this.questionIndex).getAnswers();
     }
 
     public String getCorrectAnswer() {
-        return this.flashCards.get(this.isQuestion).getCorrectAnswer();
+        return this.flashCards.get(this.questionIndex).getCorrectAnswer();
     }
 
+    public int increaseQuestionIndex() {
+        if (questionIndex < numberQuestion)
+            this.questionIndex = questionIndex + 1;
+        return this.questionIndex;
+    }
 
     public boolean checkAnswer(String userAnswer) {
         return getCorrectAnswer().equals(userAnswer);
     }
 
     public List<String> randomiseAnswers() {
-        List<String> array = this.flashCards.get(this.isQuestion).getAnswers();
+        List<String> array = this.flashCards.get(this.questionIndex).getAnswers();
         Collections.shuffle(array);
         return array;
     }
