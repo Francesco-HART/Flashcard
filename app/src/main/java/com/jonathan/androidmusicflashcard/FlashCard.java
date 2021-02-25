@@ -1,5 +1,6 @@
 package com.jonathan.androidmusicflashcard;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -60,9 +61,9 @@ public class FlashCard implements Parcelable {
         return correctAnswer;
     }
 
-    public List<String> randomAnswers() {
-        return new ArrayList<>();
-
+    public int getSongID(Context context)
+    {
+        return context.getResources().getIdentifier("raw/" + this.songName, null, context.getPackageName());
     }
 
     @Override

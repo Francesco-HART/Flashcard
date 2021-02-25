@@ -1,5 +1,6 @@
 package com.jonathan.androidmusicflashcard;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -100,6 +101,28 @@ public class Game implements Parcelable {
 
     public String getCorrectAnswer() {
         return this.flashCards.get(this.questionIndex).getCorrectAnswer();
+    }
+
+    public boolean isLastIndex()
+    {
+        if (questionIndex == numberQuestion - 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public int getSong(Context context)
+    {
+        return this.flashCards.get(this.questionIndex).getSongID(context);
+    }
+
+    public int getCurrentIndex()
+    {
+        return questionIndex;
     }
 
     public int increaseQuestionIndex() {
