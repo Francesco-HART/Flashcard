@@ -24,7 +24,7 @@ public class Game implements Parcelable {
         this.questionIndex = questionIndex;
     }
 
-    private int numberQuestion = 2;
+    private int numberQuestion = 3;
     private int questionIndex = 0;
     private Theme theme;
     private List<FlashCard> flashCards;
@@ -34,7 +34,10 @@ public class Game implements Parcelable {
         this.theme = theme;
 
         //TODO : generate array flashCard by random
+        Collections.shuffle(flashCards);
         this.flashCards = flashCards;
+
+
     }
 
 

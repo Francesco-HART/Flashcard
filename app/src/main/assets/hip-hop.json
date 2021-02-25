@@ -3,22 +3,33 @@
     "theme": "hip-hop",
     "songName": "desiigner_panda",
     "answers": [
-      "reponse1",
-      "2",
-      "3",
-      "4"
+      "Desiigner - Panda",
+      "Michael Jackson - Bad",
+      "Eminem - Rap God",
+      "Pop Smoke - Dior"
     ],
-    "correctAnswer": "reponse1"
+    "correctAnswer": "Desiigner - Panda"
   },
   {
     "theme": "hip-hop",
     "songName": "eminem_not_afraid",
     "answers": [
-      "reponse1",
-      "2",
-      "3",
-      "4"
+      "Eminem - Not Afraid",
+      "Pop Smoke - For The Night",
+      "Booba - Ratpi World",
+      "Post Malone - Better Now"
     ],
-    "correctAnswer": "reponse1"
+    "correctAnswer": "Eminem - Not Afraid"
+  },
+  {
+    "theme": "hip-hop",
+    "songName": "fetty_wap_trap_queen",
+    "answers": [
+      "Eminem - Lose Yourself",
+      "Travis Scott - Antidote",
+      "Fetty Wap - Trap Queen",
+      "Flo Rida - Whistle"
+    ],
+    "correctAnswer": "Fetty Wap - Trap Queen"
   }
 ]
