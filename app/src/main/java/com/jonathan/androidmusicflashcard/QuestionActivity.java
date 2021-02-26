@@ -116,8 +116,10 @@ public class QuestionActivity extends AppCompatActivity {
         Button playSong = findViewById(R.id.playAudioButton);
 
         playSong.setOnClickListener(v -> {
-            mediaPlayer = MediaPlayer.create(QuestionActivity.this, game.getSong(QuestionActivity.this));
-            mediaPlayer.start();
+            if(!mediaPlayer.isPlaying()){
+                mediaPlayer = MediaPlayer.create(QuestionActivity.this, game.getSong(QuestionActivity.this));
+                mediaPlayer.start();
+            }
         });
 
 
