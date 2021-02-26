@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listButton" />
+        app:layout_constraintTop_toBottomOf="@+id/questionsListButton" />
 
     <Button
         android:id="@+id/playButton"
@@ -25,17 +25,17 @@
         android:layout_marginTop="32dp"
         android:text="Play"
         app:backgroundTint="#F61B3E"
-        app:layout_constraintBottom_toTopOf="@+id/listButton"
+        app:layout_constraintBottom_toTopOf="@+id/questionsListButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/listButton"
+        android:id="@+id/questionsListButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="LIST"
+        android:text="questions LIST"
         app:backgroundTint="#F61B3E"
         app:layout_constraintBottom_toTopOf="@+id/aboutButton"
         app:layout_constraintEnd_toEndOf="parent"

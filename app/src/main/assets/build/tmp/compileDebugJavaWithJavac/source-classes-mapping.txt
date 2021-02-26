@@ -6,8 +6,8 @@ com/jonathan/androidmusicflashcard/Question.java
  com.jonathan.androidmusicflashcard.Question
  com.jonathan.androidmusicflashcard.Question$1
 com/jonathan/androidmusicflashcard/Game.java
- com.jonathan.androidmusicflashcard.Game
- com.jonathan.androidmusicflashcard.Game$1
- com.jonathan.androidmusicflashcard.Game$Theme
+ com.jonathan.androidmusicflashcard.FlashCardGame
+ com.jonathan.androidmusicflashcard.FlashCardGame$1
+ com.jonathan.androidmusicflashcard.FlashCardGame$Theme
 com/jonathan/androidmusicflashcard/QuestionActivity.java
  com.jonathan.androidmusicflashcard.QuestionActivity

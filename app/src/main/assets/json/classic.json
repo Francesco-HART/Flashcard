@@ -1,7 +1,7 @@
 [
   {
     "theme": "Classic",
-    "songName": "beethovens_5th_symphony",
+    "fileName": "beethovens_5th_symphony",
     "answers": [
       "Vivaldi - Adagio E Piano",
       "Chopin - Prelude in B Minor",
@@ -12,7 +12,7 @@
   },
   {
     "theme": "Classic",
-    "songName": "claude_debussy_clair_de_lune",
+    "fileName": "claude_debussy_clair_de_lune",
     "answers": [
       "Claude Debussy - Clair de Lune",
       "Beethovens - 5th Symphony",
@@ -23,7 +23,7 @@
   },
   {
     "theme": "Classic",
-    "songName": "mozart_eine_kleine_nachtmusik",
+    "fileName": "mozart_eine_kleine_nachtmusik",
     "answers": [
       "Claude Debussy - Le Petit Berger",
       "Beethovens - 5th Symphony",
@@ -34,7 +34,7 @@
   },
 {
     "theme": "Classic",
-    "songName": "mendelssohn_wedding_march",
+    "fileName": "mendelssohn_wedding_march",
     "answers": [
       "Mendelssohn - Wedding March",
       "Chopin - Prelude in B Minor",
@@ -45,7 +45,7 @@
   },
 {
     "theme": "Classic",
-    "songName": "edvard_grieg_in_the_hall_of_the_mountain_king",
+    "fileName": "edvard_grieg_in_the_hall_of_the_mountain_king",
     "answers": [
       "Mozart - Eine kleine Nachtmusik",
       "Beethovens - 5th Symphony",

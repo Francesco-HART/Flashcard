@@ -1,7 +1,7 @@
 [
   {
     "theme": "HipHop",
-    "songName": "desiigner_panda",
+    "fileName": "desiigner_panda",
     "answers": [
       "Desiigner - Panda",
       "Michael Jackson - Bad",
@@ -12,7 +12,7 @@
   },
   {
     "theme": "HipHop",
-    "songName": "eminem_not_afraid",
+    "fileName": "eminem_not_afraid",
     "answers": [
       "Eminem - Not Afraid",
       "Pop Smoke - For The Night",
@@ -23,7 +23,7 @@
   },
   {
     "theme": "HipHop",
-    "songName": "fetty_wap_trap_queen",
+    "fileName": "fetty_wap_trap_queen",
     "answers": [
       "Eminem - Lose Yourself",
       "Travis Scott - Antidote",
@@ -34,7 +34,7 @@
   },
 {
     "theme": "HipHop",
-    "songName": "post_malone_congratulations",
+    "fileName": "post_malone_congratulations",
     "answers": [
       "Wiz Khalifa - We Dem Boyz",
       "Pop Smoke - Invincible",
@@ -45,7 +45,7 @@
   },
 {
     "theme": "HipHop",
-    "songName": "post_malone_rockstar",
+    "fileName": "post_malone_rockstar",
     "answers": [
       "Wiz Khalifa - Black And Yellow",
       "Drake - Start From The Bottom",

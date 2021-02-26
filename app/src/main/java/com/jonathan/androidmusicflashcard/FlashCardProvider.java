@@ -14,10 +14,9 @@ import java.util.List;
 
 public class FlashCardProvider {
 
-
     private static final String TAG = "FlashCard";
 
-    public ArrayList<FlashCard> loadFlashCards(Context context, Game.Theme theme) {
+    public ArrayList<FlashCard> loadFlashCards(Context context, FlashCardGame.Theme theme) {
         ArrayList<FlashCard> flashCards = new ArrayList<>();
 
         String fileName = "";
@@ -49,15 +48,13 @@ public class FlashCardProvider {
                 JSONArray jsonArray = obj.getJSONArray("answers");
 
                 for (int j = 0; j < jsonArray.length(); j++) {
-
-                    Log.i(TAG, "loadFlashCards: " + jsonArray.get(j));
                     answers.add((String) jsonArray.get(j));
                 }
 
-                Game.Theme flashCardTheme = Game.Theme.valueOf(obj.getString("theme"));
+                FlashCardGame.Theme flashCardTheme = FlashCardGame.Theme.valueOf(obj.getString("theme"));
 
                 List<String> answersCopy = new ArrayList<>(answers);
-                FlashCard flashCard = new FlashCard(obj.getString("songName"), answersCopy, (obj.getString("correctAnswer")), flashCardTheme);
+                FlashCard flashCard = new FlashCard(obj.getString("fileName"), answersCopy, (obj.getString("correctAnswer")), flashCardTheme);
                 flashCards.add(flashCard);
             }
 
@@ -66,12 +63,11 @@ public class FlashCardProvider {
 
         }
         return flashCards;
-
     }
 
     public ArrayList<FlashCard> loadAllFlashCards(Context context) {
         ArrayList<FlashCard> flashCards = new ArrayList<>();
-        for (Game.Theme theme : Game.Theme.values()){
+        for (FlashCardGame.Theme theme : FlashCardGame.Theme.values()){
             flashCards.addAll(loadFlashCards(context, theme));
         }
         return flashCards;

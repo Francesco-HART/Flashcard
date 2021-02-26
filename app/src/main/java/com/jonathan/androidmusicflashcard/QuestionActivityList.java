@@ -23,24 +23,17 @@ public class QuestionActivityList extends AppCompatActivity {
     ArrayList<FlashCard> flashCardsList = new ArrayList<>();
     private FlashCardProvider provider;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_list);
 
         provider = new FlashCardProvider();
-
         flashCardsList = provider.loadAllFlashCards(this);
-
-
         adapter = new QuestionAdapter(flashCardsList);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
     }
-
-
 }

@@ -14,8 +14,10 @@ public class AboutActivity extends AppCompatActivity {
 
         TextView nameTextView = findViewById(R.id.nameTextView);
         nameTextView.setText("App Music");
+
         TextView emailTextView = findViewById(R.id.byTextView);
-        emailTextView.setText("Crée par Francesco, Guillaume et Jonathan");
+        emailTextView.setText("This app was created by Francesco, Guillaume et Jonathan even if Francesco is a noob");
+
         TextView versionTextView = findViewById(R.id.versionTextView);
         versionTextView.setText("v. " + String.valueOf(BuildConfig.VERSION_CODE));
     }

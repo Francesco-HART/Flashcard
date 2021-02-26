@@ -1,7 +1,7 @@
 [
   {
     "theme": "Electro",
-    "songName": "avicii_addicted_to_you",
+    "fileName": "avicii_addicted_to_you",
     "answers": [
       "Galantis - Runaway",
       "Skrillex - Scary Monsters And Nice Sprites",
@@ -12,7 +12,7 @@
   },
   {
     "theme": "Electro",
-    "songName": "avicii_levels",
+    "fileName": "avicii_levels",
     "answers": [
       "Galantis - Runaway",
       "Nicky Romero - Toulouse",
@@ -23,7 +23,7 @@
   },
   {
     "theme": "Electro",
-    "songName": "calvin_harris_blame",
+    "fileName": "calvin_harris_blame",
     "answers": [
       "Calvin Harris - Blame",
       "Avicii - Hey Brother",
@@ -34,7 +34,7 @@
   },
 {
     "theme": "Electro",
-    "songName": "clavin_harris_summer",
+    "fileName": "clavin_harris_summer",
     "answers": [
       "Galantis - Runaway",
       "David Guetta - Titanium",
@@ -45,7 +45,7 @@
   },
 {
     "theme": "Electro",
-    "songName": "daft_punk_one_more_time",
+    "fileName": "daft_punk_one_more_time",
     "answers": [
       "Calvin Harris - Summer",
       "Avicii - Hey Brother",

@@ -26,8 +26,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_question, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_question, parent, false);
         return new ViewHolder(view);
     }
 
@@ -52,13 +51,12 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             case R.id.rootItem:
                 Context context = v.getContext();
                 ArrayList<FlashCard> cards = new ArrayList<>();
-                FlashCard f = (FlashCard) v.getTag();
-                cards.add(f);
-                Game game = new Game(f.getTheme(),cards);
-                Log.i("TAG", "onClick: " + f);
-                Intent intent = new Intent(context, QuestionActivity.class);
-                intent.putExtra("game",game);
-                context.startActivity(intent);
+                FlashCard flashCard = (FlashCard) v.getTag();
+                cards.add(flashCard);
+                FlashCardGame flashCardGame = new FlashCardGame(flashCard.getTheme(),cards);
+                Intent questionActivityIntent = new Intent(context, QuestionActivity.class);
+                questionActivityIntent.putExtra("game", flashCardGame);
+                context.startActivity(questionActivityIntent);
                 break;
         }
     }

@@ -4,37 +4,36 @@ import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FlashCard implements Parcelable {
 
-    private String songName;
+    private String fileName;
     private List<String> answers;
     private String correctAnswer;
-    private Game.Theme theme;
+    private FlashCardGame.Theme theme;
 
-    public FlashCard(String songName, List<String> answers, String correctAnswer,Game.Theme theme) {
-        this.songName = songName;
+    public FlashCard(String fileName, List<String> answers, String correctAnswer, FlashCardGame.Theme theme) {
+        this.fileName = fileName;
         this.answers = answers;
         this.correctAnswer = correctAnswer;
         this.theme = theme;
     }
 
-    public Game.Theme getTheme() {
+    public FlashCardGame.Theme getTheme() {
         return theme;
     }
 
     protected FlashCard(Parcel in) {
-        songName = in.readString();
+        fileName = in.readString();
         answers = in.createStringArrayList();
         correctAnswer = in.readString();
-        theme = Game.Theme.values()[in.readInt()];
+        theme = FlashCardGame.Theme.values()[in.readInt()];
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(songName);
+        dest.writeString(fileName);
         dest.writeStringList(answers);
         dest.writeString(correctAnswer);
         dest.writeInt(theme.ordinal());
@@ -57,8 +56,8 @@ public class FlashCard implements Parcelable {
         }
     };
 
-    public String getSongName() {
-        return songName;
+    public String getFileName() {
+        return fileName;
     }
 
     public List<String> getAnswers() {
@@ -71,13 +70,13 @@ public class FlashCard implements Parcelable {
 
     public int getSongID(Context context)
     {
-        return context.getResources().getIdentifier("raw/" + this.songName, null, context.getPackageName());
+        return context.getResources().getIdentifier("raw/" + this.fileName, null, context.getPackageName());
     }
 
     @Override
     public String toString() {
         return "Question{" +
-                "song=" + songName +
+                "song=" + fileName +
                 ", answers=" + answers +
                 ", correctAnswer='" + correctAnswer + '\'' +
                 '}';
