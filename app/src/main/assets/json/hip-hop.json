@@ -31,5 +31,27 @@
       "Flo Rida - Whistle"
     ],
     "correctAnswer": "Fetty Wap - Trap Queen"
+  },
+{
+    "theme": "HipHop",
+    "songName": "post_malone_congratulations",
+    "answers": [
+      "Wiz Khalifa - We Dem Boyz",
+      "Pop Smoke - Invincible",
+      "Eminem - Till I Collapse",
+      "Post Malone - Congratulations"
+    ],
+    "correctAnswer": "Post Malone - Congratulations"
+  },
+{
+    "theme": "HipHop",
+    "songName": "post_malone_rockstar",
+    "answers": [
+      "Wiz Khalifa - Black And Yellow",
+      "Drake - Start From The Bottom",
+      "Ynw Melly - Murder On My Mind",
+      "Post Malone - Rockstar"
+    ],
+    "correctAnswer": "Post Malone - Rockstar"
   }
 ]

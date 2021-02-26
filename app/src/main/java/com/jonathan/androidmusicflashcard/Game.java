@@ -24,7 +24,7 @@ public class Game implements Parcelable {
         this.questionIndex = questionIndex;
     }
 
-    private int numberQuestion = 3;
+    private int numberQuestion = 5;
     private int questionIndex = 0;
     private Theme theme;
     private List<FlashCard> flashCards;
