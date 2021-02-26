@@ -34,7 +34,7 @@
 
     <TextView
         android:id="@+id/byTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="By"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
