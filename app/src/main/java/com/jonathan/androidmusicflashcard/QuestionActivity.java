@@ -65,6 +65,7 @@ public class QuestionActivity extends AppCompatActivity {
         confirmButton.setOnClickListener(v -> {
 
             mediaPlayer.release();
+            mediaPlayer = new MediaPlayer();
             RadioButton checkedRadioButton = findViewById(radioGroup.getCheckedRadioButtonId());
 
             if (radioGroup.getCheckedRadioButtonId() != -1) {
@@ -116,7 +117,7 @@ public class QuestionActivity extends AppCompatActivity {
         Button playSong = findViewById(R.id.playAudioButton);
 
         playSong.setOnClickListener(v -> {
-            if(!mediaPlayer.isPlaying()){
+            if(mediaPlayer != null && !mediaPlayer.isPlaying()){
                 mediaPlayer = MediaPlayer.create(QuestionActivity.this, game.getSong(QuestionActivity.this));
                 mediaPlayer.start();
             }
