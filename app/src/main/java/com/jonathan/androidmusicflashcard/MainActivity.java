@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
                     ArrayList<FlashCard> flashCards = provider.loadFlashCards(MainActivity.this, theme);
                     flashCardGame = new FlashCardGame(theme, flashCards);
 
+                    dialog.dismiss();
+
                     Intent questionActivityIntent = new Intent(MainActivity.this, QuestionActivity.class);
                     questionActivityIntent.putExtra("game", flashCardGame);
                     questionActivityIntent.putExtra("theme", theme.toString());
